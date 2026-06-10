@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Job Application Tracker</h1>
+
+    <form id="jobForm">
+        <input type="text" id="company" placeholder="Company Name" required>
+
+        <input type="text" id="role" placeholder="Job Title" required>
+
+        <select id="status">
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+        </select>
+
+        <button type="submit">Add Job</button>
+    </form>
+
+    <div id="jobList"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
