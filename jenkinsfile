@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Cloning repository...'
+                checkout scm
+            }
+        }
+
+        stage('Validate Files') {
+            steps {
+                sh '''
+                test -f index.html
+                test -f style.css
+                test -f script.js
+                '''
+                echo 'Application files found.'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Static application build completed.'
+            }
+        }
+
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: '*.html,*.css,*.js', fingerprint: true
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
