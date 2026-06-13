@@ -96,9 +96,6 @@ Push code:
 ```bash
 git branch -M main
 git push -u origin main
-```
-
-Deployment
 
 This application can be deployed using GitHub Pages.
 
@@ -141,4 +138,4 @@ This project demonstrates:
 
 Mkpoikana Udoekong
 
-Aspiring Platform Engineer | DevOps Engineer
+Platform Engineer | DevOps Engineer
